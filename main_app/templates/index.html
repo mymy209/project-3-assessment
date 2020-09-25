@@ -8,12 +8,18 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Widgets</h1>
-    <hr>
-    {% if widget_list|length == 0 %}
+    <h1>Wacky Widgets</h1>
+    {% if widgets|length == 0 %}
         <h3>No Widgets Exist</h3>
     {% else %}
 
     {% endif %}
+    <hr>
+    <h4>Add Widget</h4>
+        <form class="pure-form">
+            {% csrf_token %}
+            {{ widget_form.as_p }}
+            <button type="submit" class="pure-button">ADD WIDGET</button>
+        </form>
 </body>
 </html>
